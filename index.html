@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beach Office — Cafés e Coworkings com Wi-Fi no Litoral</title>
+<meta name="description" content="Onde trabalhar remoto no litoral paulista: cafés e coworkings com Wi-Fi medido, tomadas e vista.">
+<style>body{font-family:system-ui;margin:0;background:#f0fdfa;color:#134e4a}header{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:2rem 1rem;text-align:center}header a{color:#99f6e4}main{max-width:800px;margin:1.5rem auto;padding:0 1rem}.card{background:#fff;border-radius:12px;padding:1.2rem;margin:1rem 0;box-shadow:0 2px 8px rgba(20,184,166,.18)}select{font-size:1rem;padding:.5rem;border-radius:8px;border:1px solid #5eead4}.spot{border:1px solid #ccfbf1;border-radius:12px;padding:.9rem;margin:.6rem 0;display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;align-items:center}.tag{background:#ccfbf1;border-radius:999px;padding:.15rem .6rem;font-size:.75rem}.wifi{font-weight:700;color:#0d9488}footer{text-align:center;font-size:.85rem;padding:2rem 1rem;color:#0f766e}.net{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:.8rem}.net a{background:#ccfbf1;color:#115e59;padding:.3rem .6rem;border-radius:999px;text-decoration:none;font-size:.8rem}</style>
+</head>
+<body>
+<header><h1>☕💻 Beach Office</h1><p>O escritório com vista mar: cafés e coworkings testados para trabalho remoto.</p><a href="https://praia.digital">← praia.digital</a> · <a href="https://praia.digital/apps">Hub de apps</a></header>
+<main>
+<div class="card"><label><b>Cidade:</b></label> <select id="cid" onchange="render()"><option>Santos</option><option>Guarujá</option><option>São Sebastião</option><option>Ubatuba</option><option>Praia Grande</option></select><div id="list"></div></div>
+<div class="card"><h3>Vai virar residente?</h3><p>💻 <a href="https://praia.digital/nomade-digital">Nômade Digital — ranking de cidades</a><br>🧺 <a href="https://praia.digital/custo-de-vida">Custo de Vida — litoral vs capital</a><br>📦 <a href="https://praia.digital/mudei-pra-praia">Mudei pra Praia — checklist</a></p></div>
+</main>
+<footer><b>Rede Praia Digital</b><div class="net"><a href="https://praia.digital/apps">Hub</a><a href="https://praia.digital/solo-sagrado">Solo Sagrado</a><a href="https://praia.digital/guia-sindico">Guia do Síndico</a><a href="https://praia.digital/sossego-index">Sossego Index</a><a href="https://praia.digital/transito-litoral">Trânsito Litoral</a><a href="https://praia.digital/ranking-praias">Ranking de Praias</a></div><p>© 2026 Praia Digital</p></footer>
+<script>
+const D={'Santos':[['Coworking Gonzaga Hub','coworking',480,'R$ 89/dia','Vista canal'],['Café Orla — Embaré','café',220,'R$ 0 (consumação)','Mesas com tomada'],['Sala 33 — Boqueirão','coworking',600,'R$ 590/mês','Fibra dedicada']],'Guarujá':[['Enseada Work Club','coworking',350,'R$ 79/dia','A 100m da praia'],['Café do Surfista — Pitangueiras','café',150,'R$ 0','Abre 7h']],'São Sebastião':[['Maresias Creative Hub','coworking',300,'R$ 95/dia','Chuveiro pós-praia'],['Café Cambury','café',120,'R$ 0','Terraço com vista']],'Ubatuba':[['Itaguá Office','coworking',250,'R$ 69/dia',''],['Café do Farol','café',90,'R$ 0','Silencioso']],'Praia Grande':[['Guilhermina Work','coworking',300,'R$ 59/dia','Melhor custo'],['Padaria Code Café','café',110,'R$ 0','24h em fds']]};
+function render(){
+ const c=document.getElementById('cid').value;
+ document.getElementById('list').innerHTML=D[c].map(s=>'<div class="spot"><div><b>'+s[0]+'</b> <span class="tag">'+s[1]+'</span><br><small>'+s[3]+(s[4]?' · '+s[4]:'')+'</small></div><span class="wifi">📶 '+s[2]+' Mbps</span></div>').join('');
+}
+render();
+</script>
+</body>
+</html>
